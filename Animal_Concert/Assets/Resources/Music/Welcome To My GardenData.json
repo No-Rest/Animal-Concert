@@ -1,0 +1,21 @@
+{
+    "Music": "Welcome To My Garden",
+    "BPM": 100.0,
+    "noteCount": 2,
+    "note": [
+        {
+            "Type": 0,
+            "Color": 0,
+            "LineNum": 1,
+            "StartTime": 0.0,
+            "EndTime": 0.0
+        },
+        {
+            "Type": 0,
+            "Color": 0,
+            "LineNum": 4,
+            "StartTime": 0.15,
+            "EndTime": 0.0
+        }
+    ]
+}
