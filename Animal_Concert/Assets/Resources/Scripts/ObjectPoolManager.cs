@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectPoolManager : MonoBehaviour
 {
+    public ObjectPool pool;
     private static ObjectPoolManager instance;
     public static ObjectPoolManager Instance
     {
@@ -12,7 +13,6 @@ public class ObjectPoolManager : MonoBehaviour
             return Instance;
         }
     }
-
     private void Awake()
     {
         if(instance)

@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Note : MonoBehaviour
+public class Note : Poolable
 {
-    // Start is called before the first frame update
-    void Start()
+    public NoteContral noteContral;
+    private void OnBecameInvisible()
     {
-        
+        Push();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void NoteMove()
     {
-        
+        this.transform.Translate(Vector3.down * 0.5f);
+    }
+
+    private void NoteDisabled()
+    {
+        Push();
     }
 }
