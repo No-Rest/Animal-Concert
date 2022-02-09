@@ -18,12 +18,26 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Vector2 DirectionToMove;
     public MusicInfo musicInfo;
     public bool isStart;
-    public bool isDone;
+    public bool isDone = true;
+    public float speed;
 
+    
     public GameObject panel0;
 
+    private Vector3 Target;
     private Vector2 mouseOffset;
 
+    void Start()
+    {
+        Target = transform.position;
+    }
+    
+    void Update()
+    {
+        if(!isDone)
+            Moving();
+    }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         mouseOffset = new Vector2(transform.position.x, transform.position.y) - eventData.position;
@@ -42,128 +56,47 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("드래그 중지(오브젝트 안에서 마우스 뗌)");
+        //Debug.Log("드래그 중지(오브젝트 안에서 마우스 뗌)");
+        //SelectNumber();
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("드래그 중지(오브젝트 안이든 밖이든)");
-        DirectionToMove = transform.position; 
+        //Debug.Log("드래그 중지(오브젝트 안이든 밖이든)");
         SelectNumber();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //for (int i = 0; i < transform.childCount; i++)
-        {
-            //Debug.Log(transform.GetChild(i).transform.position);
-        }
-        
-        
-    }
+    
 
     void SelectNumber()//자식객체의 포지션 가져오고, 가운데에 위치시킬 객체 정하고, 뮤직인포의 셀렉트넘버 바꿔주기, 그리고 가운데로 위치시키기
     {
+        Vector3 value;
         for (int i = 0; i < transform.childCount; i++)
         {
-            Vector2 value = transform.GetChild(i).position;
-            
-            if (Mathf.Abs(1440 - value.x) < 393)
+            value = transform.GetChild(i).position;
+            if (Mathf.Abs(1440 - value.x) < 450)
             {
-                Debug.Log("지금!");
                 musicInfo.SelectedNumber = i;
-                if (1440 - value.x > 0)
-                {
-                    //StartCoroutine(MoveLeft());
-                }
-                    
-                else
-                {
-                    //StartCoroutine(MoveRight());
-                }
                 break;
             }
         }
-        
-    }
 
-    IEnumerator MoveRight()
-    {
+        float minus = 1440 - transform.GetChild(musicInfo.SelectedNumber).position.x;
+
+        Target = new Vector3(transform.position.x + minus, transform.position.y, transform.position.z);
+        
+
         isDone = false;
-        int loopNum = 0;
-        //Debug.Log(1440 - transform.GetChild(musicInfo.SelectedNumber).position.x);
-        while (Mathf.Abs(1440 - transform.GetChild(musicInfo.SelectedNumber).position.x) > 0.5)
-        {
-            isStart = true;
-            Debug.Log("코루틴 실행중");
-            transform.Translate(new Vector3(15,0,0) * Time.deltaTime );
-            Debug.Log(1440 - transform.GetChild(musicInfo.SelectedNumber).position.x);
-            
-            //transform.position = Vector3.Lerp(transform.position,new Vector3(transform.GetChild(musicInfo.SelectedNumber).position.x, transform.position.y, 0f),Time.deltaTime);
-            
-            if(loopNum++ > 10000)
-                throw new Exception("Infinite Loop");
-        }
-        isDone = true;
-
-        
-        yield return null;
     }
-    
-    IEnumerator MoveLeft()
+
+    void Moving()
     {
-        isDone = false;
-        int loopNum = 0;
-        Debug.Log(1440 - transform.GetChild(musicInfo.SelectedNumber).position.x);
-        while (Mathf.Abs(1440 - transform.GetChild(musicInfo.SelectedNumber).position.x) > 0.5)
+        transform.position = Vector3.Lerp(transform.position, Target, Time.deltaTime * speed);
+        if (transform.position.x - Target.x < 0.5)
         {
-            isStart = true;
-            Debug.Log("코루틴 실행중");
-            transform.Translate(new Vector3(-15,0,0) * Time.deltaTime );
-            
-            //transform.position = Vector3.Lerp(transform.position,new Vector3(transform.GetChild(musicInfo.SelectedNumber).position.x, transform.position.y, 0f),Time.deltaTime);
-            
-            if(loopNum++ > 10000)
-                throw new Exception("Infinite Loop");
+            isDone = true;
         }
-        isDone = true;
-
-        
-        yield return null;
     }
-    
 
-    void StartPositioning()//더할건지 뺄건지
-    {
-        
-        
-    }
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            text1.text = "터치됨!";
-
-        }
-
-        if (isStart)
-        {
-            if (isDone)
-            {
-                Debug.Log("코루틴 정지");
-                StopCoroutine(MoveLeft());
-                StopCoroutine(MoveRight());
-                isStart = false;
-            }
-                
-        }
-            
-    }
 
     
 }
