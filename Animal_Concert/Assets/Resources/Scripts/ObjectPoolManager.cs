@@ -10,7 +10,7 @@ public class ObjectPoolManager : MonoBehaviour
     {
         get
         {
-            return Instance;
+            return instance;
         }
     }
     private void Awake()

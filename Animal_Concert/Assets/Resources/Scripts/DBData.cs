@@ -7,14 +7,16 @@ using UnityEngine;
 [System.Serializable]
 public class NoteData
 {
+    public int Order;
     public int Type; // 0-> short 1-> long
     public int Color; // 0-> red 1-> blue
     public int LineNum;
     public double StartTime;
     public double EndTime; //long노트 사용시 사용
 
-    public NoteData(int type, int color, int Line, double start, double end)
+    public NoteData(int order, int type, int color, int Line, double start, double end)
     {
+        Order = order;
         Type = type;
         Color = color;
         LineNum = Line;
