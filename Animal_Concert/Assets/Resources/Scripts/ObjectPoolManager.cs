@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ObjectPoolManager : MonoBehaviour
 {
+    public ObjectPool pool;
     private static ObjectPoolManager instance;
     public static ObjectPoolManager Instance
     {
         get
         {
-            return Instance;
+            return instance;
         }
     }
-
     private void Awake()
     {
         if(instance)

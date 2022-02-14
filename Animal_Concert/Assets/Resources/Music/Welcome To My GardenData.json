@@ -4,17 +4,43 @@
     "noteCount": 2,
     "note": [
         {
+	"Order": 0,
             "Type": 0,
             "Color": 0,
             "LineNum": 1,
-            "StartTime": 0.0,
+            "StartTime": 0.25,
             "EndTime": 0.0
         },
         {
+	"Order": 1,
             "Type": 0,
             "Color": 0,
             "LineNum": 4,
-            "StartTime": 0.15,
+            "StartTime": 1,
+            "EndTime": 0.0
+        },
+        {
+	"Order": 0,
+            "Type": 0,
+            "Color": 0,
+            "LineNum": 2,
+            "StartTime": 1.75,
+            "EndTime": 0.0
+        },
+        {
+	"Order": 0,
+            "Type": 0,
+            "Color": 0,
+            "LineNum": 3,
+            "StartTime": 2.5,
+            "EndTime": 0.0
+        },
+        {
+	"Order": 0,
+            "Type": 0,
+            "Color": 0,
+            "LineNum": 4,
+            "StartTime": 3.25,
             "EndTime": 0.0
         }
     ]
