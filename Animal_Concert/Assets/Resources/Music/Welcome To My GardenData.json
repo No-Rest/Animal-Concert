@@ -8,7 +8,7 @@
             "Type": 0,
             "Color": 0,
             "LineNum": 1,
-            "StartTime": 2,
+            "StartTime": 0.25,
             "EndTime": 0.0
         },
         {
@@ -16,7 +16,7 @@
             "Type": 0,
             "Color": 0,
             "LineNum": 4,
-            "StartTime": 2.15,
+            "StartTime": 1,
             "EndTime": 0.0
         },
         {
@@ -24,7 +24,7 @@
             "Type": 0,
             "Color": 0,
             "LineNum": 2,
-            "StartTime": 3,
+            "StartTime": 1.75,
             "EndTime": 0.0
         },
         {
@@ -32,7 +32,7 @@
             "Type": 0,
             "Color": 0,
             "LineNum": 3,
-            "StartTime": 3,
+            "StartTime": 2.5,
             "EndTime": 0.0
         },
         {
@@ -40,7 +40,7 @@
             "Type": 0,
             "Color": 0,
             "LineNum": 4,
-            "StartTime": 3,
+            "StartTime": 3.25,
             "EndTime": 0.0
         }
     ]

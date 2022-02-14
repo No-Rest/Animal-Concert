@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class NoteContral : MonoBehaviour
 {
+    public GameObject JudgeLine;
     public DBData data;
     public Music music;
     [SerializeField]
     private int order = 0;
-/*    private void Start()
-    {
 
-    }*/
     public IEnumerator AwaitMakeNote(int order)
     {
         yield return new WaitForSeconds((float)data.musicData.note[order].StartTime + order * music.BeatInterval);
@@ -20,11 +18,12 @@ public class NoteContral : MonoBehaviour
     public void NoteDispose()
     {
         ObjectPoolManager.Instance.pool.Pop().transform.position = NoteLine();
+        ObjectPoolManager.Instance.pool.GetComponent<Note>().NoteLine = data.musicData.note[order].LineNum;
         order++;
     }
     public Vector2 NoteLine()
     {
-        Vector2 Location;
+        Vector2 Location; 
         switch(data.musicData.note[order].LineNum)
         {
             case 1:
@@ -45,5 +44,10 @@ public class NoteContral : MonoBehaviour
         }
         return Location;
 
+    }
+
+    public void NoteDisabled()
+    {
+/*        if(JudgeLine.transform.position.y >= )*/
     }
 }
