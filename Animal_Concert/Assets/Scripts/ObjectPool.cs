@@ -5,37 +5,67 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField]
-    private Poolable poolObj;
-    [SerializeField]
-    private int NoteCount;
+    private GameObject PoolObject;
+    private static GameObject NoteContainer;
+    private Queue<Note> poolQueue = new Queue<Note>();
 
-    private Stack<Poolable> poolStack = new Stack<Poolable>();
-
-    private void Start()
+    private static ObjectPool instance;
+    public static ObjectPool Instance
     {
-        NoteCreate();
+        get
+        {
+            return instance;
+        }
+    }
+    private void Awake()
+    {
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        NoteContainer = this.gameObject;
+        Initialize(10);
     }
 
-    public void NoteCreate()
+
+    private Note CreateNewObject()
     {
-        for(int i = 0; i < NoteCount; i++)
+        var newObj = Instantiate(PoolObject, transform).GetComponent<Note>();
+        newObj.gameObject.SetActive(false);
+        return newObj;
+    }
+    private void Initialize(int count)
+    {
+        for(int i = 0; i < count; i++)
         {
-            Poolable noteObj = Instantiate(poolObj, this.gameObject.transform);
-            noteObj.Create(this);
-            poolStack.Push(noteObj);
+            poolQueue.Enqueue(CreateNewObject());
+        }
+    }
+    public static Note GetObject()
+    {
+        if(Instance.poolQueue.Count > 0)
+        {
+            var obj = Instance.poolQueue.Dequeue();
+            obj.transform.SetParent(NoteContainer.transform);
+            obj.gameObject.SetActive(true);
+            return obj;
+        }
+        else
+        {
+            var newObj = Instance.CreateNewObject();
+            newObj.transform.SetParent(NoteContainer.transform);
+            newObj.gameObject.SetActive(true);
+            return newObj;
         }
     }
 
-    public GameObject Pop()
+    public static void ReturnObject(Note note)
     {
-        Poolable obj = poolStack.Pop();
-        obj.gameObject.SetActive(true);
-        return obj.gameObject;
+        note.gameObject.SetActive(false);
+        note.transform.SetParent(Instance.transform);
+        Instance.poolQueue.Enqueue(note);
     }
 
-    public void Push(Poolable obj)
-    {
-        obj.gameObject.SetActive(false);
-        poolStack.Push(obj);
-    }
 }

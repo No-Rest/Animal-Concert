@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Note
+  - PinkButton
+  - BlueButton
   layers:
   - Default
   - TransparentFX

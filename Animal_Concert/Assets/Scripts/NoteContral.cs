@@ -10,6 +10,10 @@ public class NoteContral : MonoBehaviour
     [SerializeField]
     private int order = 0;
 
+    public List<Note> Line1 = new List<Note>();
+    public List<Note> Line2 = new List<Note>();
+    public List<Note> Line3 = new List<Note>();
+    public List<Note> Line4 = new List<Note>();
     public IEnumerator AwaitMakeNote(int order)
     {
         yield return new WaitForSeconds((float)data.musicData.note[order].StartTime + order * music.BeatInterval);
@@ -17,33 +21,35 @@ public class NoteContral : MonoBehaviour
     }
     public void NoteDispose()
     {
-        ObjectPoolManager.Instance.pool.Pop().transform.position = NoteLine();
-        ObjectPoolManager.Instance.pool.GetComponent<Note>().NoteLine = data.musicData.note[order].LineNum;
+        var note = ObjectPool.GetObject();
+        NoteLine(note);
         order++;
     }
-    public Vector2 NoteLine()
+    private void NoteLine(Note note)
     {
-        Vector2 Location; 
         switch(data.musicData.note[order].LineNum)
         {
             case 1:
-                Location = new Vector2(-450, 750);
+                Line1.Add(note);
+                note.transform.position = new Vector2(-450, 750);
+                note.NoteLine = 1;
                 break;
             case 2:
-                Location = new Vector2(-150, 750);
+                Line2.Add(note);
+                note.transform.position = new Vector2(-150, 750);
+                note.NoteLine = 2;
                 break;
             case 3:
-                Location = new Vector2(150, 750);
+                Line3.Add(note);
+                note.transform.position = new Vector2(150, 750);
+                note.NoteLine = 3;
                 break;
             case 4:
-                Location = new Vector2(450, 750);
-                break;
-            default:
-                Location = new Vector2(0, 0);
+                Line4.Add(note);
+                note.transform.position = new Vector2(450, 750);
+                note.NoteLine = 4;
                 break;
         }
-        return Location;
-
     }
 
     public void NoteDisabled()

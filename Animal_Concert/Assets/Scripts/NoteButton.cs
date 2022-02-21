@@ -1,31 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class NoteButton : MonoBehaviour
 {
-    public Transform PinkButton;
-    public Transform BlueButton;
+    public Text Score;
+    public static int ScoreValue;
+    public NoteContral noteContral;
     [SerializeField]
-    private Transform[] pinkButton;
+    private GameObject[] pinkButton;
     [SerializeField]
-    private Transform[] blueButton;
-    // Start is called before the first frame update
+    private GameObject[] blueButton;
+
     void Start()
     {
-        pinkButton = PinkButton.gameObject.GetComponentsInChildren<Transform>();
-        blueButton = BlueButton.gameObject.GetComponentsInChildren<Transform>();
+        pinkButton = GameObject.FindGameObjectsWithTag("PinkButton");
+        blueButton = GameObject.FindGameObjectsWithTag("BlueButton");
     }
 
-    public void Disable()
+    public void DisableNote()
     {
-        Note note = GameObject.FindGameObjectWithTag("Note").GetComponent<Note>();
-        Debug.Log("disable");
-
-        if (note.isJudge)
+        for(int i = 0; i < pinkButton.Length; i++)
         {
-            note.NoteDisabled();
+            if (EventSystem.current.currentSelectedGameObject == pinkButton[i])
+            {
+                ScoreValue += 100;
+                switch (i)
+                {
+                    case 0:
+                        if(noteContral.Line1[0].isJudge)
+                        {
+                            noteContral.Line1[0].DestroyNote();
+                            Score.text = ScoreValue.ToString();
+                        }
+                        break;
+                    case 1:
+                        if (noteContral.Line2[0].isJudge)
+                        {
+                            noteContral.Line2[0].DestroyNote();
+                            Score.text = ScoreValue.ToString();
+                        }
+                        break;
+                    case 2:
+                        if (noteContral.Line3[0].isJudge)
+                        {
+                            noteContral.Line3[0].DestroyNote();
+                            Score.text = ScoreValue.ToString();
+                        }
+                        break;
+                    case 3:
+                        if (noteContral.Line4[0].isJudge)
+                        {
+                            noteContral.Line4[0].DestroyNote();
+                            Score.text = ScoreValue.ToString();
+                        }
+                        break;
+                }
+            }         
         }
-
     }
 }
