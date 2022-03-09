@@ -12,7 +12,7 @@ public class NoteData
     public int Color; // 0-> red 1-> blue
     public int LineNum;
     public double StartTime;
-    public double EndTime; //long³λΖ® »ηΏλ½Γ »ηΏλ
+    public double EndTime; //longλ…ΈνΈ μ‚¬μ©μ‹ μ‚¬μ©
 
     public NoteData(int order, int type, int color, int Line, double start, double end)
     {
