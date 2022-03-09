@@ -127,7 +127,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         
         transform.position = Vector3.Lerp(transform.position, Target, Time.deltaTime * speed);
         
-        if (Mathf.Abs(transform.position.x - Target.x) < 0.5)
+        if (Mathf.Abs(transform.position.x - Target.x) < 0.5f)
         {
             isDone = true;
         }
