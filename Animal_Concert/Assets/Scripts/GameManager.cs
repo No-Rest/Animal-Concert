@@ -23,6 +23,24 @@ public class GameManager : MonoBehaviour
         normal,
         hard
     };
+    
+    public static GameManager instance = null; 
+    private void Awake() 
+    {
+        if (instance == null) //instance가 null. 즉, 시스템상에 존재하고 있지 않을때
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (instance != this) 
+                Destroy(this.gameObject);
+        } 
+    }
+
+            
+    
 
     void Start()
     {
