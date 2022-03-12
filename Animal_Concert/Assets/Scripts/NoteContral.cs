@@ -9,11 +9,11 @@ public class NoteContral : MonoBehaviour
     public Music music;
     [SerializeField]
     private int order = 0;
+    public List<Note> Line1;
+    public List<Note> Line2;
+    public List<Note> Line3;
+    public List<Note> Line4;
 
-    public List<Note> Line1 = new List<Note>();
-    public List<Note> Line2 = new List<Note>();
-    public List<Note> Line3 = new List<Note>();
-    public List<Note> Line4 = new List<Note>();
     public IEnumerator AwaitMakeNote(int order)
     {
         yield return new WaitForSeconds((float)data.musicData.note[order].StartTime + order * music.BeatInterval);
@@ -25,35 +25,59 @@ public class NoteContral : MonoBehaviour
         NoteLine(note);
         order++;
     }
+    public void RemoveLine(Note note, int LineNum)
+    {
+        Line(LineNum).Remove(note);
+    }
+    public void NoteButtonClick(int LineNum, int Color)
+    {
+        if(Line(LineNum).Count > 0)
+        {
+            Line(LineNum)[0].NoteButtonClick(LineNum, Color);
+        }
+    }
+
+    private List<Note> Line(int LineNum)
+    {
+        switch (LineNum)
+        {
+            case 1:
+                return Line1;
+            case 2:
+                return Line2;
+            case 3:
+                return Line3;
+            case 4:
+                return Line4;
+            default:
+                return null;
+        }
+    }
     private void NoteLine(Note note)
     {
         switch(data.musicData.note[order].LineNum)
         {
             case 1:
-                Line1.Add(note);
                 note.transform.position = new Vector2(-450, 750);
                 note.NoteLine = 1;
+                Line1.Add(note);
                 break;
             case 2:
-                Line2.Add(note);
                 note.transform.position = new Vector2(-150, 750);
                 note.NoteLine = 2;
+                Line2.Add(note);
                 break;
             case 3:
-                Line3.Add(note);
                 note.transform.position = new Vector2(150, 750);
                 note.NoteLine = 3;
+                Line3.Add(note);
                 break;
             case 4:
-                Line4.Add(note);
                 note.transform.position = new Vector2(450, 750);
                 note.NoteLine = 4;
+                Line4.Add(note);
                 break;
         }
     }
 
-    public void NoteDisabled()
-    {
-/*        if(JudgeLine.transform.position.y >= )*/
-    }
 }

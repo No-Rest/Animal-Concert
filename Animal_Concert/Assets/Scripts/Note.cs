@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
+    public enum NoteJudge {Miss, Bad, Great, Perfect}
+    public NoteJudge noteJudge;
     public NoteContral noteContral;
     public Camera mainCamera;
     public GameObject JudgeLine;
@@ -20,37 +22,50 @@ public class Note : MonoBehaviour
         this.transform.position -= new Vector3(0, mainCamera.orthographicSize * Time.deltaTime, 0f);
     }
 
-    public void DestroyNote()
+    private void DestroyNote()
     {
         ObjectPool.ReturnObject(this);
-        switch (NoteLine)
-        {
-            case 1:
-                noteContral.Line1.Remove(noteContral.Line1[0]);
-                break;
-            case 2:
-                noteContral.Line2.Remove(noteContral.Line2[0]);
-                break;
-            case 3:
-                noteContral.Line3.Remove(noteContral.Line3[0]);
-                break;
-            case 4:
-                noteContral.Line4.Remove(noteContral.Line4[0]);
-                break;
-        }
+        Debug.Log(noteJudge);
     }
 
-/*    private void OnBecameInvisible()
+    public void NoteButtonClick(int LineNum, int Color)
+    {
+        if(LineNum == NoteLine && isJudge)
+        {
+            DestroyNote();
+        }
+    }
+    private void OnBecameInvisible()
     {
         DestroyNote();
-    }*/
+    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject == JudgeLine)
+        if(collision.tag == "JudgementLine")
         {
             isJudge = true;
-            Debug.Log("ture");
+            switch (collision.name)
+            {
+                case "Bad":
+                    noteJudge = NoteJudge.Bad;
+                    break;
+                case "Great":
+                    noteJudge = NoteJudge.Great;
+                    break;
+                case "Perfect":
+                    noteJudge = NoteJudge.Perfect;
+                    break;
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        noteContral.RemoveLine(this, NoteLine);
+        noteJudge = NoteJudge.Miss;
+        if (collision.tag == "JudgementLine")
+        {
+            isJudge = false;
         }
     }
 }

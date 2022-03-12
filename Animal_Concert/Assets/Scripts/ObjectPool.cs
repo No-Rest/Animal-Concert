@@ -63,9 +63,9 @@ public class ObjectPool : MonoBehaviour
 
     public static void ReturnObject(Note note)
     {
-        note.gameObject.SetActive(false);
         note.transform.SetParent(Instance.transform);
         Instance.poolQueue.Enqueue(note);
+        note.gameObject.SetActive(false);
     }
 
 }
