@@ -48,9 +48,16 @@ public class ObjectPool : MonoBehaviour
         if(Instance.poolQueue.Count > 0)
         {
             var obj = Instance.poolQueue.Dequeue();
-            obj.transform.SetParent(NoteContainer.transform);
-            obj.gameObject.SetActive(true);
-            return obj;
+            if(obj.gameObject.activeSelf == false )
+            {
+                obj.transform.SetParent(NoteContainer.transform);
+                obj.gameObject.SetActive(true);
+                return obj;
+            }
+            else
+            {
+                return GetObject();
+            }
         }
         else
         {

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8056074310910274453}
   - component: {fileID: 6588595203251424746}
   - component: {fileID: 8829215320312465419}
-  - component: {fileID: 4301102798625879730}
   - component: {fileID: 920008246202198209}
+  - component: {fileID: 4301102798625879730}
   m_Layer: 0
   m_Name: PinkNote
   m_TagString: Note
@@ -111,21 +111,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 280.75, y: 89.89}
   m_EdgeRadius: 0
---- !u!114 &4301102798625879730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6535860696123674666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58caf8a4a8db4614f8e10543038f5229, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  noteContral: {fileID: 0}
-  mainCamera: {fileID: 0}
-  JudgeLine: {fileID: 0}
 --- !u!50 &920008246202198209
 Rigidbody2D:
   serializedVersion: 4
@@ -147,3 +132,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4301102798625879730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535860696123674666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58caf8a4a8db4614f8e10543038f5229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteJudge: 0
+  noteContral: {fileID: 0}
+  judge: {fileID: 0}
+  mainCamera: {fileID: 0}
+  JudgeLine: {fileID: 0}
+  isJudge: 0
+  NoteLine: 0
+  score: 0
+  hp: 0

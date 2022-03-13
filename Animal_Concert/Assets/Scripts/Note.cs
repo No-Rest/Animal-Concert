@@ -7,15 +7,23 @@ public class Note : MonoBehaviour
     public enum NoteJudge {Miss, Bad, Great, Perfect}
     public NoteJudge noteJudge;
     public NoteContral noteContral;
+    public Judge judge;
     public Camera mainCamera;
-    public GameObject JudgeLine;
     public bool isJudge;
     public int NoteLine;
-
 
     private void Update()
     {
         NoteMove();
+        if(this.transform.position.y < -730)
+        {
+            DestroyNote();
+        }
+    }
+    private void OnEnable()
+    {
+        isJudge = false;
+        noteJudge = NoteJudge.Miss;
     }
     private void NoteMove()
     {
@@ -25,7 +33,8 @@ public class Note : MonoBehaviour
     private void DestroyNote()
     {
         ObjectPool.ReturnObject(this);
-        Debug.Log(noteJudge);
+        noteContral.RemoveLine(this, NoteLine);
+        judge.CurrentJudge(noteJudge.ToString());
     }
 
     public void NoteButtonClick(int LineNum, int Color)
@@ -35,10 +44,6 @@ public class Note : MonoBehaviour
             DestroyNote();
         }
     }
-    private void OnBecameInvisible()
-    {
-        DestroyNote();
-    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -47,6 +52,11 @@ public class Note : MonoBehaviour
             isJudge = true;
             switch (collision.name)
             {
+                case "Miss":
+                    isJudge = false;
+                    noteContral.RemoveLine(this, NoteLine);
+                    noteJudge = NoteJudge.Miss;
+                    break;
                 case "Bad":
                     noteJudge = NoteJudge.Bad;
                     break;
@@ -57,15 +67,6 @@ public class Note : MonoBehaviour
                     noteJudge = NoteJudge.Perfect;
                     break;
             }
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        noteContral.RemoveLine(this, NoteLine);
-        noteJudge = NoteJudge.Miss;
-        if (collision.tag == "JudgementLine")
-        {
-            isJudge = false;
         }
     }
 }
