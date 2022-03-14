@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteContral : MonoBehaviour
+public class NoteControl : MonoBehaviour
 {
     public GameObject JudgeLine;
     public DBData data;
@@ -23,6 +23,7 @@ public class NoteContral : MonoBehaviour
     {
         var note = ObjectPool.GetObject();
         NoteLine(note);
+        note.ChangeColor();
         order++;
     }
     public void RemoveLine(Note note, int LineNum)
@@ -55,26 +56,24 @@ public class NoteContral : MonoBehaviour
     }
     private void NoteLine(Note note)
     {
-        switch(data.musicData.note[order].LineNum)
+        note.NoteLine = data.musicData.note[order].LineNum;
+        note.NoteColor = data.musicData.note[order].Color;
+        switch (data.musicData.note[order].LineNum)
         {
             case 1:
                 note.transform.position = new Vector2(-450, 750);
-                note.NoteLine = 1;
                 Line1.Add(note);
                 break;
             case 2:
                 note.transform.position = new Vector2(-150, 750);
-                note.NoteLine = 2;
                 Line2.Add(note);
                 break;
             case 3:
                 note.transform.position = new Vector2(150, 750);
-                note.NoteLine = 3;
                 Line3.Add(note);
                 break;
             case 4:
                 note.transform.position = new Vector2(450, 750);
-                note.NoteLine = 4;
                 Line4.Add(note);
                 break;
         }

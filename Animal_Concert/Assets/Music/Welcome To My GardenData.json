@@ -6,7 +6,7 @@
         {
 	"Order": 0,
             "Type": 0,
-            "Color": 0,
+            "Color": 1,
             "LineNum": 1,
             "StartTime": 0.75,
             "EndTime": 0.0
@@ -14,7 +14,7 @@
         {
 	"Order": 0,
             "Type": 0,
-            "Color": 0,
+            "Color": 1,
             "LineNum": 2,
             "StartTime": 1.5,
             "EndTime": 0.0
@@ -22,7 +22,7 @@
         {
 	"Order": 0,
             "Type": 0,
-            "Color": 0,
+            "Color": 1,
             "LineNum": 2,
             "StartTime": 2.25,
             "EndTime": 0.0
@@ -30,7 +30,7 @@
         {
 	"Order": 0,
             "Type": 0,
-            "Color": 0,
+            "Color": 1,
             "LineNum": 3,
             "StartTime": 3,
             "EndTime": 0.0
@@ -102,7 +102,7 @@
         {
 	"Order": 0,
             "Type": 0,
-            "Color": 0,
+            "Color": 1,
             "LineNum": 1,
             "StartTime": 9.75,
             "EndTime": 0.0
@@ -134,7 +134,7 @@
         {
 	"Order": 0,
             "Type": 0,
-            "Color": 0,
+            "Color": 1,
             "LineNum": 4,
             "StartTime": 12.75,
             "EndTime": 0.0
@@ -182,7 +182,7 @@
         {
 	"Order": 0,
             "Type": 0,
-            "Color": 0,
+            "Color": 1,
             "LineNum": 2,
             "StartTime": 17.25,
             "EndTime": 0.0

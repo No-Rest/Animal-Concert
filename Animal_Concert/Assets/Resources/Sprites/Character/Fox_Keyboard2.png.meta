@@ -1,0 +1,342 @@
+fileFormatVersion: 2
+guid: 90d14cd463e65ab42b708a263f0cd35d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -353703671593372844
+    second: Fox_Keyboard2_0
+  - first:
+      213: 5590800201933012403
+    second: Fox_Keyboard2_1
+  - first:
+      213: 1002755331784488114
+    second: Fox_Keyboard2_2
+  - first:
+      213: 7036302354680826333
+    second: Fox_Keyboard2_3
+  - first:
+      213: 2763586582073751099
+    second: Fox_Keyboard2_4
+  - first:
+      213: 3693792899752154662
+    second: Fox_Keyboard2_5
+  - first:
+      213: -5904743171352348887
+    second: Fox_Keyboard2_6
+  - first:
+      213: -2928010352565605091
+    second: Fox_Keyboard2_7
+  - first:
+      213: -4035286557144389892
+    second: Fox_Keyboard2_8
+  - first:
+      213: -2421625964378945888
+    second: Fox_Keyboard2_9
+  - first:
+      213: 1942687645944090191
+    second: Fox_Keyboard2_10
+  - first:
+      213: -6256538462849015288
+    second: Fox_Keyboard2_11
+  - first:
+      213: -8015728219700344989
+    second: Fox_Keyboard2_12
+  - first:
+      213: 3378663909905919962
+    second: Fox_Keyboard2_13
+  - first:
+      213: -660187632287833550
+    second: Fox_Keyboard2_14
+  - first:
+      213: 8115661541966411328
+    second: Fox_Keyboard2_15
+  - first:
+      213: 5465305239068124682
+    second: Fox_Keyboard2_16
+  - first:
+      213: 7322210515494408950
+    second: Fox_Keyboard2_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fox_Keyboard2_4
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 3
+        width: 357
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36ba82ba5b3a5620800000000000000
+      internalID: 2763586582073751099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fox_Keyboard2_11
+      rect:
+        serializedVersion: 2
+        x: 2641
+        y: 3
+        width: 357
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802e056aa6f4c29a0800000000000000
+      internalID: -6256538462849015288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fox_Keyboard2_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 3
+        width: 357
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367cfa047a962c090800000000000000
+      internalID: -8015728219700344989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fox_Keyboard2_13
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 3
+        width: 357
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adfef55dcec63ee20800000000000000
+      internalID: 3378663909905919962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fox_Keyboard2_14
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 3
+        width: 357
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232a064a8da86d6f0800000000000000
+      internalID: -660187632287833550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fox_Keyboard2_15
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 3
+        width: 357
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046f43e7c2f90a070800000000000000
+      internalID: 8115661541966411328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fox_Keyboard2_16
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 3
+        width: 358
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06acb3982aa8db40800000000000000
+      internalID: 5465305239068124682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fox_Keyboard2_17
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 3
+        width: 358
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f29caa4ba7bd9560800000000000000
+      internalID: 7322210515494408950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

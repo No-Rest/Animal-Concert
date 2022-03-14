@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 920008246202198209}
   - component: {fileID: 4301102798625879730}
   m_Layer: 0
-  m_Name: PinkNote
+  m_Name: Note
   m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,12 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58caf8a4a8db4614f8e10543038f5229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteJudge: 0
   noteContral: {fileID: 0}
   judge: {fileID: 0}
   mainCamera: {fileID: 0}
-  JudgeLine: {fileID: 0}
+  noteJudge: 0
   isJudge: 0
   NoteLine: 0
-  score: 0
-  hp: 0
+  NoteColor: 0
+  PinkNote: {fileID: 21300000, guid: 1b81f127892acf545a19492ecbbc07a6, type: 3}
+  BlueNote: {fileID: 21300000, guid: 5e6610ddb8a5777459cb4af23754c475, type: 3}

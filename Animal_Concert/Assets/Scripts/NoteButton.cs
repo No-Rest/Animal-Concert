@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class NoteButton : MonoBehaviour
 {
-    public NoteContral noteContral;
+    public NoteControl noteContral;
     public int LineNum;
     public int Color;
 

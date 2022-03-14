@@ -24,20 +24,16 @@ public class Judge : MonoBehaviour
         {
             case "Miss":
                 ChangeHP(-0.1f);
-                Debug.Log(judge + -0.1f);
                 break;
             case "Bad":
                 ChangeScore(1);
-                Debug.Log(judge);
                 break;
             case "Great":
                 ChangeScore(5);
-                Debug.Log(judge);
                 break;
             case "Perfect":
                 ChangeScore(10);
                 ChangeHP(0.01f);
-                Debug.Log(judge);
                 break;
         }
     }

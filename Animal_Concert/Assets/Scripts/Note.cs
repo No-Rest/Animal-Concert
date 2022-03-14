@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public enum NoteJudge {Miss, Bad, Great, Perfect}
-    public NoteJudge noteJudge;
-    public NoteContral noteContral;
+    public NoteControl noteContral;
     public Judge judge;
     public Camera mainCamera;
+    public enum NoteJudge {Miss, Bad, Great, Perfect}
+    public NoteJudge noteJudge;
     public bool isJudge;
-    public int NoteLine;
+    public int NoteLine { get; set; }
+    public int NoteColor { get; set; } // 0-> Pink 1-> Blue
+    public Sprite PinkNote;
+    public Sprite BlueNote;
 
     private void Update()
     {
@@ -36,12 +39,27 @@ public class Note : MonoBehaviour
         noteContral.RemoveLine(this, NoteLine);
         judge.CurrentJudge(noteJudge.ToString());
     }
+    public void ChangeColor()
+    {
+        switch(NoteColor)
+        {
+            case 0:
+                this.GetComponent<SpriteRenderer>().sprite = PinkNote;
+                break;
+            case 1:
+                this.GetComponent<SpriteRenderer>().sprite = BlueNote;
+                break;
+        }
+    }
 
     public void NoteButtonClick(int LineNum, int Color)
     {
         if(LineNum == NoteLine && isJudge)
         {
-            DestroyNote();
+            if(Color == NoteColor)
+            {
+                DestroyNote();
+            }
         }
     }
 

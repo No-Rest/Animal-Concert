@@ -6,7 +6,7 @@ public class Music : MonoBehaviour
 {
     public AudioSource audio;
     public DBData data;
-    public NoteContral noteContral;
+    public NoteControl noteContral;
     public bool isPlay { get; set; } //GameManager¿¡ ³Ö±â
     public double CurrentTime { get; set; }
     float timeLastFrame = 0;
