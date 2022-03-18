@@ -9,8 +9,9 @@ public class Judge : MonoBehaviour
     public Text JudgeText;
     public Text ScoreText;
     public Image HP_Fill;
-    private int Score = 0;
-    private int Combo = 0;
+    public float AlphaTime = 2f;
+    private int Score { get; set; }
+    private int Combo { get; set; }
     private void ChangeScore(int score)
     {
         Score += score;
@@ -25,10 +26,24 @@ public class Judge : MonoBehaviour
     {
         Combo += combo;
         ComboText.text = Combo.ToString();
+        //StartCoroutine(ChangeAlpha(ComboText.color));
     }
     private void ChangeJudge(string judge)
     {
         JudgeText.text = judge;
+        StartCoroutine(ChangeAlpha(JudgeText.color));
+    }
+    private IEnumerator ChangeAlpha(Color color)
+    {
+        float time = 0f;
+        Color TextColor = JudgeText.color;
+        while(TextColor.a > 0f)
+        {
+            time += Time.deltaTime / AlphaTime;
+            TextColor.a = Mathf.Lerp(1f, 0f, time);
+            JudgeText.color = TextColor;
+            yield return null;
+        }
     }
     public void CurrentJudge(string judge)
     {
