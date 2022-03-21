@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b8732393d4bc704bad9d987fe2a1683
+guid: 3b279bc6fac085a48824e46c73e095fe
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -130,10 +130,10 @@ TextureImporter:
       name: Bear_Drum_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 638
-        height: 637
+        x: 0
+        y: 0
+        width: 669.5
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,10 +151,10 @@ TextureImporter:
       name: Bear_Drum_1
       rect:
         serializedVersion: 2
-        x: 683
-        y: 5
-        width: 638
-        height: 632
+        x: 669
+        y: 0
+        width: 669.5
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Bear_Drum_2
       rect:
         serializedVersion: 2
-        x: 1352
-        y: 5
-        width: 638
-        height: 637
+        x: 1338
+        y: 0
+        width: 669.5
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: Bear_Drum_3
       rect:
         serializedVersion: 2
-        x: 2029
-        y: 5
-        width: 639
-        height: 632
+        x: 2007
+        y: 0
+        width: 669.5
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Bear_Drum_4
       rect:
         serializedVersion: 2
-        x: 2696
-        y: 5
-        width: 638
-        height: 648
+        x: 2676
+        y: 0
+        width: 669.5
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +235,10 @@ TextureImporter:
       name: Bear_Drum_5
       rect:
         serializedVersion: 2
-        x: 3361
-        y: 5
-        width: 638
-        height: 648
+        x: 3345
+        y: 0
+        width: 669.5
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Bear_Drum_6
       rect:
         serializedVersion: 2
-        x: 4027
-        y: 5
-        width: 639
-        height: 648
+        x: 4014
+        y: 0
+        width: 669.5
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +277,10 @@ TextureImporter:
       name: Bear_Drum_7
       rect:
         serializedVersion: 2
-        x: 4694
-        y: 3
-        width: 641
-        height: 652
+        x: 4683
+        y: 0
+        width: 669.5
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

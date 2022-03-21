@@ -12,6 +12,10 @@ public class Judge : MonoBehaviour
     public float AlphaTime = 2f;
     private int Score { get; set; }
     private int Combo { get; set; }
+/*    private void Update()
+    {
+        ChangeAlpha();
+    }*/
     private void ChangeScore(int score)
     {
         Score += score;
@@ -22,26 +26,33 @@ public class Judge : MonoBehaviour
         HP_Fill.fillAmount += hp;
     }
     
-    private void ChangeCombo(int combo)
+    private void ChangeJudgeText(string judge)
     {
-        Combo += combo;
-        ComboText.text = Combo.ToString();
-        //StartCoroutine(ChangeAlpha(ComboText.color));
-    }
-    private void ChangeJudge(string judge)
-    {
+        ComboText.GetComponent<Text>().color = new Color(ComboText.GetComponent<Text>().color.r, ComboText.GetComponent<Text>().color.g, ComboText.GetComponent<Text>().color.b, 1f);
+        JudgeText.GetComponent<Text>().color = new Color(JudgeText.GetComponent<Text>().color.r, JudgeText.GetComponent<Text>().color.g, JudgeText.GetComponent<Text>().color.b, 1f);
+        time = 0;
+        //Text 색 초기화
         JudgeText.text = judge;
-        StartCoroutine(ChangeAlpha(JudgeText.color));
-    }
-    private IEnumerator ChangeAlpha(Color color)
-    {
-        float time = 0f;
-        Color TextColor = JudgeText.color;
-        while(TextColor.a > 0f)
+        if(judge != "MISS")
         {
-            time += Time.deltaTime / AlphaTime;
-            TextColor.a = Mathf.Lerp(1f, 0f, time);
-            JudgeText.color = TextColor;
+            Combo += 1;
+            ComboText.text = Combo.ToString();
+        }
+        StartCoroutine(ChangeAlpha(ComboText.gameObject));
+        StartCoroutine(ChangeAlpha(JudgeText.gameObject));
+
+    }
+    private float time;
+    private float destoryTime = 4f;
+    private IEnumerator ChangeAlpha(GameObject text)
+    {
+        Color textColor = text.GetComponent<Text>().color;
+        yield return new WaitForSeconds (0.05f);
+        while (textColor.a > 0f)
+        {
+            time += Time.deltaTime / destoryTime;
+            textColor.a = Mathf.Lerp(1f, 0f, time);
+            text.GetComponent<Text>().color = textColor;
             yield return null;
         }
     }
@@ -53,23 +64,20 @@ public class Judge : MonoBehaviour
                 Combo = 0;
                 ComboText.text = null;
                 ChangeHP(-0.1f);
-                ChangeJudge("MISS");
+                ChangeJudgeText("MISS");
                 break;
             case "Bad":
                 ChangeScore(1);
-                ChangeCombo(1);
-                ChangeJudge("BAD");
+                ChangeJudgeText("BAD");
                 break;
             case "Great":
                 ChangeScore(5);
-                ChangeCombo(1);
-                ChangeJudge("GREAT");
+                ChangeJudgeText("GREAT");
                 break;
             case "Perfect":
                 ChangeScore(10);
-                ChangeCombo(1);
                 ChangeHP(0.01f);
-                ChangeJudge("PERFECT");
+                ChangeJudgeText("PERFECT");
                 break;
         }
     }
