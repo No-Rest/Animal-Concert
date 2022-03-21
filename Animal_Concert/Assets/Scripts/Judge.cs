@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Judge : MonoBehaviour
-{ 
+{
+    public UIManager uiManager;
     public Text ComboText;
     public Text JudgeText;
     public Text ScoreText;
@@ -30,7 +31,7 @@ public class Judge : MonoBehaviour
     {
         ComboText.GetComponent<Text>().color = new Color(ComboText.GetComponent<Text>().color.r, ComboText.GetComponent<Text>().color.g, ComboText.GetComponent<Text>().color.b, 1f);
         JudgeText.GetComponent<Text>().color = new Color(JudgeText.GetComponent<Text>().color.r, JudgeText.GetComponent<Text>().color.g, JudgeText.GetComponent<Text>().color.b, 1f);
-        time = 0;
+        //time = 0;
         //Text 색 초기화
         JudgeText.text = judge;
         if(judge != "MISS")
@@ -38,24 +39,22 @@ public class Judge : MonoBehaviour
             Combo += 1;
             ComboText.text = Combo.ToString();
         }
-        StartCoroutine(ChangeAlpha(ComboText.gameObject));
-        StartCoroutine(ChangeAlpha(JudgeText.gameObject));
-
+        StartCoroutine(uiManager.AlphaControl(ComboText.gameObject, AlphaTime, 0f));
+        StartCoroutine(uiManager.AlphaControl(JudgeText.gameObject, AlphaTime, 0f));
     }
-    private float time;
-    private float destoryTime = 4f;
-    private IEnumerator ChangeAlpha(GameObject text)
+/*    private float time;
+    private IEnumerator AlphaControl(GameObject text)
     {
         Color textColor = text.GetComponent<Text>().color;
         yield return new WaitForSeconds (0.05f);
         while (textColor.a > 0f)
         {
-            time += Time.deltaTime / destoryTime;
+            time += Time.deltaTime / AlphaTime;
             textColor.a = Mathf.Lerp(1f, 0f, time);
             text.GetComponent<Text>().color = textColor;
             yield return null;
         }
-    }
+    }*/
     public void CurrentJudge(string judge)
     {
         switch(judge)
