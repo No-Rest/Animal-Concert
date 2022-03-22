@@ -2,6 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class JudgeCount
+{
+    public int MissCount { get; set; }
+    public int BadCount { get; set; }
+    public int GoodCount { get; set; }
+    public int ExcellentCount { get; set; }
+    public int MaxComboCount { get; set; }
+    public int TotalScoreCount { get; set; }
+
+    public JudgeCount(int missCount, int badCount, int goodCount, int excellentCount, int maxComboCount, int totalScore)
+    {
+        MissCount = missCount;
+        BadCount = badCount;
+        GoodCount = goodCount;
+        ExcellentCount = excellentCount;
+        MaxComboCount = maxComboCount;
+        TotalScoreCount = totalScore;
+    }
+}
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -39,12 +59,17 @@ public class GameManager : MonoBehaviour
         } 
     }
 
-            
-    
+/*    public int MissCount { get; set; }
+    public int BadCount { get; set; }
+    public int Good { get; set; }
+    public int Excellent { get; set; }
+    public int MaxCombo { get; set; }*/
+    public UIManager uimanager;
 
-    void Start()
+    public JudgeCount judgeCount;
+    private void EndGame()
     {
-        
+
     }
 
     // Update is called once per frame
