@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class JudgeCount
+public struct JudgeCount
 {
     public int MissCount { get; set; }
     public int BadCount { get; set; }
@@ -11,16 +10,6 @@ public class JudgeCount
     public int ExcellentCount { get; set; }
     public int MaxComboCount { get; set; }
     public int TotalScoreCount { get; set; }
-
-    public JudgeCount(int missCount, int badCount, int goodCount, int excellentCount, int maxComboCount, int totalScore)
-    {
-        MissCount = missCount;
-        BadCount = badCount;
-        GoodCount = goodCount;
-        ExcellentCount = excellentCount;
-        MaxComboCount = maxComboCount;
-        TotalScoreCount = totalScore;
-    }
 }
 public class GameManager : MonoBehaviour
 {
@@ -58,14 +47,7 @@ public class GameManager : MonoBehaviour
                 Destroy(this.gameObject);
         } 
     }
-
-/*    public int MissCount { get; set; }
-    public int BadCount { get; set; }
-    public int Good { get; set; }
-    public int Excellent { get; set; }
-    public int MaxCombo { get; set; }*/
     public UIManager uimanager;
-
     public JudgeCount judgeCount;
     private void EndGame()
     {

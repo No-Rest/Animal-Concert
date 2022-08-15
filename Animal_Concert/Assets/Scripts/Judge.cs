@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Judge : MonoBehaviour
 {
     public UIManager uiManager;
+    public GameManager gameManager;
     public Text ComboText;
     public Text JudgeText;
     public Text ScoreText;
@@ -14,13 +15,11 @@ public class Judge : MonoBehaviour
     public float AlphaTime = 2f;
     private int Score { get; set; }
     private int Combo { get; set; }
-/*    private void Update()
-    {
-        ChangeAlpha();
-    }*/
+
     private void ChangeScore(int score)
     {
         Score += score;
+        gameManager.judgeCount.MaxComboCount = Score;
         ScoreText.text = Score.ToString();
     }
     private void ChangeHP(float hp)
